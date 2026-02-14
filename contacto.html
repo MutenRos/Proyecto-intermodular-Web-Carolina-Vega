@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carolina Vega · Contacto</title>
+  <meta name="description" content="Contacta con Carolina Vega para contratación, prensa, colaboraciones y otras consultas.">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -135,6 +136,23 @@
   <footer>
     © 2024 CAROLINA VEGA · TODOS LOS DERECHOS RESERVADOS
   </footer>
+
+  <!-- Validación JS del formulario de contacto -->
+  <script>
+    document.querySelector('.form-contacto').addEventListener('submit', function(e) {
+      var email = this.querySelector('[name="email"]');
+      var mensaje = this.querySelector('[name="mensaje"]');
+      if (mensaje.value.trim().length < 10) {
+        e.preventDefault();
+        alert('Por favor, escribe un mensaje de al menos 10 caracteres.');
+        mensaje.focus();
+        return;
+      }
+      if (!confirm('¿Enviar el mensaje a Carolina Vega?')) {
+        e.preventDefault();
+      }
+    });
+  </script>
 
 </body>
 </html>

@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carolina Vega</title>
+  <meta name="description" content="Carolina Vega — cantautora. Nuevo álbum Entre Luces y Sombras disponible. Escucha, descubre fechas de tour y conoce su música.">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -163,6 +164,18 @@
   <footer>
     © 2024 CAROLINA VEGA · TODOS LOS DERECHOS RESERVADOS
   </footer>
+
+  <!-- Validación JS del formulario de newsletter -->
+  <script>
+    document.querySelector('#sigueme form').addEventListener('submit', function(e) {
+      var email = this.querySelector('[name="email"]');
+      if (!email.value.includes('@') || !email.value.includes('.')) {
+        e.preventDefault();
+        alert('Por favor, introduce un email válido.');
+        email.focus();
+      }
+    });
+  </script>
 
 </body>
 </html>

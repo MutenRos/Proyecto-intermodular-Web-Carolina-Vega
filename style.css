@@ -15,6 +15,7 @@
 }
 
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 html,body{margin:0;padding:0}
 body{
   font-family: ubuntu, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -138,7 +139,17 @@ body{
   border: 1px solid rgba(255,255,255,.18);
 }
 
-.boton:hover{filter: brightness(1.03)}
+.boton{
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.boton:hover{
+  filter: brightness(1.03);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.30);
+}
+.boton:active{
+  transform: translateY(0);
+}
 .plataformas{
   margin-top: 14px;
   opacity: .9;
@@ -195,6 +206,11 @@ body{
   border: 1px solid var(--borde);
   box-shadow: 0 8px 18px rgba(0,0,0,.12);
   margin: 14px 0;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+#albumes article:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,.18);
 }
 
 #albumes img{
@@ -247,6 +263,10 @@ body{
   background: rgba(255,255,255,.52);
   border: 1px solid var(--borde);
   margin: 10px 0;
+  transition: background .2s ease;
+}
+#canciones article:hover{
+  background: rgba(255,255,255,.72);
 }
 
 #canciones button{
@@ -345,6 +365,11 @@ body{
   background: rgba(255,255,255,.7);
   border-radius: 2px;
   outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+#sigueme input:focus{
+  border-color: rgba(35,18,12,.45);
+  box-shadow: 0 0 0 3px rgba(35,18,12,.10);
 }
 
 #sigueme button{
@@ -478,6 +503,11 @@ footer{
   background: rgba(255,255,255,.55);
   border: 1px solid var(--borde);
   padding: 14px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,.14);
 }
 .card h5{
   margin: 0 0 8px 0;
@@ -643,6 +673,13 @@ footer{
   border-radius: 2px;
   outline: none;
   font-weight: 600;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.form-contacto input:focus,
+.form-contacto select:focus,
+.form-contacto textarea:focus{
+  border-color: rgba(35,18,12,.45);
+  box-shadow: 0 0 0 3px rgba(35,18,12,.10);
 }
 .form-contacto .ancho{
   grid-column: 1 / -1;
